@@ -222,8 +222,8 @@ def cylinderTest():
     gen = environment.addGenerator(Generator(environment, np.array((760, 517)), 35, 20))
     
     #piv = environment.addPivot(Pivot(environment, np.array(( 670, 517))))
-    p2 = environment.addPuck(Puck(environment, 10, np.array(( 670, 513)), radius=13, color=((75, 175, 200)), name='red'))
-    cylinder = environment.addCylinder(Cylinder(environment, pygame.Rect(570, 500, 115, 26), "right", p2))
+    p2 = environment.addPuck(Puck(environment, 10, np.array(( 670, 513)), radius=15, color=((75, 175, 200)), name='red'))
+    cylinder = environment.addCylinder(Cylinder(environment, pygame.Rect(570, 500, 115, 30), "right", p2))
 
     const = environment.addConstraint(Constraint(p2, gen.puck, 40))
     #spring = environment.addSpring(p2, gen.puck, None, 0.5, name='1')

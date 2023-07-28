@@ -52,8 +52,10 @@ class Cylinder():
             threshold = 2.2
             if self.drive.pos[0] <= self.rect.left + self.drive.radius * threshold:
                 #print("BOOM!")
+                pygame.mixer.stop()
                 self.T *= 1.5
                 self.drive.color = ((255, 0, 0))
+                #self.environment.combustion_sound.play()
             else:
                 self.T = 300
                 self.drive.color = ((75, 175, 200))
