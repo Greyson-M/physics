@@ -1,0 +1,10 @@
+FPS = 60
+WIDTH, HEIGHT = 1280, 720
+WHITE = (255, 255, 255)
+BLACK = (0, 0, 0)
+dt = (1/FPS)
+
+SPEED = 1
+
+
+DRAW_GRID = False

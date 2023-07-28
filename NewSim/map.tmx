@@ -1,0 +1,604 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.10" tiledversion="1.10.1" orientation="orthogonal" renderorder="right-down" width="80" height="45" tilewidth="16" tileheight="16" infinite="0" nextlayerid="7" nextobjectid="84">
+ <layer id="1" name="Tile Layer 1" width="80" height="45">
+  <data encoding="csv">
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+</data>
+ </layer>
+ <objectgroup id="6" name="blocks">
+  <object id="76" type="block" x="190.667" y="413.333" width="900" height="32"/>
+ </objectgroup>
+ <objectgroup id="2" name="pucks">
+  <object id="1" name="1" type="puck" x="308.978" y="176.18">
+   <point/>
+  </object>
+  <object id="2" name="2" type="puck" x="440.247" y="174.08">
+   <point/>
+  </object>
+  <object id="3" name="3" type="puck" x="574.667" y="175.13">
+   <point/>
+  </object>
+  <object id="4" name="4" type="puck" x="706.987" y="175.13">
+   <point/>
+  </object>
+  <object id="5" name="5" type="puck" x="839.306" y="174.08">
+   <point/>
+  </object>
+  <object id="6" name="6" type="puck" x="973.726" y="174.08">
+   <point/>
+  </object>
+  <object id="40" name="7" type="puck" x="304.93" y="252.186">
+   <point/>
+  </object>
+  <object id="41" name="8" type="puck" x="441.086" y="255.938">
+   <point/>
+  </object>
+  <object id="42" name="9" type="puck" x="574.946" y="258.853">
+   <point/>
+  </object>
+  <object id="43" name="10" type="puck" x="701.644" y="257.519">
+   <point/>
+  </object>
+  <object id="44" name="11" type="puck" x="841.085" y="258.728">
+   <point/>
+  </object>
+  <object id="45" name="12" type="puck" x="975.07" y="261.519">
+   <point/>
+  </object>
+ </objectgroup>
+ <objectgroup id="4" name="pivots">
+  <object id="7" name="1" type="pivot" x="1105" y="163.578">
+   <point/>
+  </object>
+  <object id="8" name="2" type="pivot" x="1105" y="229.738">
+   <point/>
+  </object>
+  <object id="9" name="3" type="pivot" x="176.658" y="162.528">
+   <point/>
+  </object>
+  <object id="10" name="4" type="pivot" x="176.658" y="228.688">
+   <point/>
+  </object>
+  <object id="67" name="5" type="pivot" x="640" y="45.3333">
+   <point/>
+  </object>
+ </objectgroup>
+ <objectgroup id="3" name="springs">
+  <object id="26" name="top" type="spring" x="371.987" y="163.578">
+   <properties>
+    <property name="block" type="bool" value="false"/>
+    <property name="k" type="float" value="1.2"/>
+    <property name="length" type="int" value="0"/>
+    <property name="offset" type="int" value="0"/>
+    <property name="p1" type="int" value="1"/>
+    <property name="p2" type="int" value="2"/>
+    <property name="pivot" type="bool" value="false"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="27" name="top" type="spring" x="507.457" y="162.528">
+   <properties>
+    <property name="block" type="bool" value="false"/>
+    <property name="k" type="float" value="1.2"/>
+    <property name="length" type="int" value="0"/>
+    <property name="offset" type="int" value="0"/>
+    <property name="p1" type="int" value="2"/>
+    <property name="p2" type="int" value="3"/>
+    <property name="pivot" type="bool" value="false"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="28" name="top" type="spring" x="640.827" y="162.528">
+   <properties>
+    <property name="block" type="bool" value="false"/>
+    <property name="k" type="float" value="1.2"/>
+    <property name="length" type="int" value="0"/>
+    <property name="offset" type="int" value="0"/>
+    <property name="p1" type="int" value="3"/>
+    <property name="p2" type="int" value="4"/>
+    <property name="pivot" type="bool" value="false"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="29" name="top" type="spring" x="773.146" y="164.628">
+   <properties>
+    <property name="block" type="bool" value="false"/>
+    <property name="k" type="float" value="1.2"/>
+    <property name="length" type="int" value="0"/>
+    <property name="offset" type="int" value="0"/>
+    <property name="p1" type="int" value="4"/>
+    <property name="p2" type="int" value="5"/>
+    <property name="pivot" type="bool" value="false"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="30" name="top" type="spring" x="910.717" y="164.628">
+   <properties>
+    <property name="block" type="bool" value="false"/>
+    <property name="k" type="float" value="1.2"/>
+    <property name="length" type="int" value="0"/>
+    <property name="offset" type="int" value="0"/>
+    <property name="p1" type="int" value="5"/>
+    <property name="p2" type="int" value="6"/>
+    <property name="pivot" type="bool" value="false"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="32" name="top" type="spring" x="238.667" y="158.667">
+   <properties>
+    <property name="block" type="bool" value="false"/>
+    <property name="k" type="float" value="1.2"/>
+    <property name="length" type="int" value="0"/>
+    <property name="offset" type="int" value="0"/>
+    <property name="p1" type="int" value="1"/>
+    <property name="p2" type="int" value="3"/>
+    <property name="pivot" type="bool" value="true"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="33" name="top" type="spring" x="1040" y="158.667">
+   <properties>
+    <property name="block" type="bool" value="false"/>
+    <property name="k" type="float" value="1.2"/>
+    <property name="length" type="int" value="0"/>
+    <property name="offset" type="int" value="0"/>
+    <property name="p1" type="int" value="6"/>
+    <property name="p2" type="int" value="1"/>
+    <property name="pivot" type="bool" value="true"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="46" name="bottom" type="spring" x="369.32" y="263.578">
+   <properties>
+    <property name="block" type="bool" value="false"/>
+    <property name="k" type="float" value="1.2"/>
+    <property name="length" type="int" value="0"/>
+    <property name="offset" type="int" value="0"/>
+    <property name="p1" type="int" value="7"/>
+    <property name="p2" type="int" value="8"/>
+    <property name="pivot" type="bool" value="false"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="47" name="bottom" type="spring" x="504.79" y="262.528">
+   <properties>
+    <property name="block" type="bool" value="false"/>
+    <property name="k" type="float" value="1.2"/>
+    <property name="length" type="int" value="0"/>
+    <property name="offset" type="int" value="0"/>
+    <property name="p1" type="int" value="8"/>
+    <property name="p2" type="int" value="9"/>
+    <property name="pivot" type="bool" value="false"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="48" name="bottom" type="spring" x="638.16" y="262.528">
+   <properties>
+    <property name="block" type="bool" value="false"/>
+    <property name="k" type="float" value="1.2"/>
+    <property name="length" type="int" value="0"/>
+    <property name="offset" type="int" value="0"/>
+    <property name="p1" type="int" value="9"/>
+    <property name="p2" type="int" value="10"/>
+    <property name="pivot" type="bool" value="false"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="49" name="bottom" type="spring" x="770.479" y="264.628">
+   <properties>
+    <property name="block" type="bool" value="false"/>
+    <property name="k" type="float" value="1.2"/>
+    <property name="length" type="int" value="0"/>
+    <property name="offset" type="int" value="0"/>
+    <property name="p1" type="int" value="10"/>
+    <property name="p2" type="int" value="11"/>
+    <property name="pivot" type="bool" value="false"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="50" name="bottom" type="spring" x="908.05" y="264.628">
+   <properties>
+    <property name="block" type="bool" value="false"/>
+    <property name="k" type="float" value="1.2"/>
+    <property name="length" type="int" value="0"/>
+    <property name="offset" type="int" value="0"/>
+    <property name="p1" type="int" value="11"/>
+    <property name="p2" type="int" value="12"/>
+    <property name="pivot" type="bool" value="false"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="51" name="bottom" type="spring" x="236" y="258.667">
+   <properties>
+    <property name="block" type="bool" value="false"/>
+    <property name="k" type="float" value="1.2"/>
+    <property name="length" type="int" value="0"/>
+    <property name="offset" type="int" value="0"/>
+    <property name="p1" type="int" value="7"/>
+    <property name="p2" type="int" value="4"/>
+    <property name="pivot" type="bool" value="true"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="52" name="bottom" type="spring" x="1037.33" y="258.667">
+   <properties>
+    <property name="block" type="bool" value="false"/>
+    <property name="k" type="float" value="1.2"/>
+    <property name="length" type="int" value="0"/>
+    <property name="offset" type="int" value="0"/>
+    <property name="p1" type="int" value="12"/>
+    <property name="p2" type="int" value="2"/>
+    <property name="pivot" type="bool" value="true"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="53" name="mid" type="spring" x="391.987" y="199.578">
+   <properties>
+    <property name="block" type="bool" value="false"/>
+    <property name="k" type="float" value="1.2"/>
+    <property name="length" type="int" value="0"/>
+    <property name="offset" type="int" value="0"/>
+    <property name="p1" type="int" value="7"/>
+    <property name="p2" type="int" value="2"/>
+    <property name="pivot" type="bool" value="false"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="54" name="mid" type="spring" x="527.457" y="198.528">
+   <properties>
+    <property name="block" type="bool" value="false"/>
+    <property name="k" type="float" value="1.2"/>
+    <property name="length" type="int" value="0"/>
+    <property name="offset" type="int" value="0"/>
+    <property name="p1" type="int" value="8"/>
+    <property name="p2" type="int" value="3"/>
+    <property name="pivot" type="bool" value="false"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="55" name="mid" type="spring" x="660.827" y="198.528">
+   <properties>
+    <property name="block" type="bool" value="false"/>
+    <property name="k" type="float" value="1.2"/>
+    <property name="length" type="int" value="0"/>
+    <property name="offset" type="int" value="0"/>
+    <property name="p1" type="int" value="9"/>
+    <property name="p2" type="int" value="4"/>
+    <property name="pivot" type="bool" value="false"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="56" name="mid" type="spring" x="793.146" y="200.628">
+   <properties>
+    <property name="block" type="bool" value="false"/>
+    <property name="k" type="float" value="1.2"/>
+    <property name="length" type="int" value="0"/>
+    <property name="offset" type="int" value="0"/>
+    <property name="p1" type="int" value="10"/>
+    <property name="p2" type="int" value="5"/>
+    <property name="pivot" type="bool" value="false"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="57" name="mid" type="spring" x="930.717" y="200.628">
+   <properties>
+    <property name="block" type="bool" value="false"/>
+    <property name="k" type="float" value="1.2"/>
+    <property name="length" type="int" value="0"/>
+    <property name="offset" type="int" value="0"/>
+    <property name="p1" type="int" value="11"/>
+    <property name="p2" type="int" value="6"/>
+    <property name="pivot" type="bool" value="false"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="58" name="mid" type="spring" x="258.667" y="194.667">
+   <properties>
+    <property name="block" type="bool" value="false"/>
+    <property name="k" type="float" value="1.2"/>
+    <property name="length" type="int" value="0"/>
+    <property name="offset" type="int" value="0"/>
+    <property name="p1" type="int" value="1"/>
+    <property name="p2" type="int" value="4"/>
+    <property name="pivot" type="bool" value="true"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="59" name="mid" type="spring" x="1060" y="194.667">
+   <properties>
+    <property name="block" type="bool" value="false"/>
+    <property name="k" type="float" value="1.2"/>
+    <property name="length" type="int" value="0"/>
+    <property name="offset" type="int" value="0"/>
+    <property name="p1" type="int" value="12"/>
+    <property name="p2" type="int" value="1"/>
+    <property name="pivot" type="bool" value="true"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="60" name="mid" type="spring" x="349.317" y="200.911">
+   <properties>
+    <property name="block" type="bool" value="false"/>
+    <property name="k" type="float" value="1.2"/>
+    <property name="length" type="int" value="0"/>
+    <property name="offset" type="int" value="0"/>
+    <property name="p1" type="int" value="8"/>
+    <property name="p2" type="int" value="1"/>
+    <property name="pivot" type="bool" value="false"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="61" name="mid" type="spring" x="484.787" y="199.861">
+   <properties>
+    <property name="block" type="bool" value="false"/>
+    <property name="k" type="float" value="1.2"/>
+    <property name="length" type="int" value="0"/>
+    <property name="offset" type="int" value="0"/>
+    <property name="p1" type="int" value="9"/>
+    <property name="p2" type="int" value="2"/>
+    <property name="pivot" type="bool" value="false"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="62" name="mid" type="spring" x="618.157" y="199.861">
+   <properties>
+    <property name="block" type="bool" value="false"/>
+    <property name="k" type="float" value="1.2"/>
+    <property name="length" type="int" value="0"/>
+    <property name="offset" type="int" value="0"/>
+    <property name="p1" type="int" value="10"/>
+    <property name="p2" type="int" value="3"/>
+    <property name="pivot" type="bool" value="false"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="63" name="mid" type="spring" x="750.476" y="201.961">
+   <properties>
+    <property name="block" type="bool" value="false"/>
+    <property name="k" type="float" value="1.2"/>
+    <property name="length" type="int" value="0"/>
+    <property name="offset" type="int" value="0"/>
+    <property name="p1" type="int" value="11"/>
+    <property name="p2" type="int" value="4"/>
+    <property name="pivot" type="bool" value="false"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="64" name="mid" type="spring" x="888.047" y="201.961">
+   <properties>
+    <property name="block" type="bool" value="false"/>
+    <property name="k" type="float" value="1.2"/>
+    <property name="length" type="int" value="0"/>
+    <property name="offset" type="int" value="0"/>
+    <property name="p1" type="int" value="12"/>
+    <property name="p2" type="int" value="5"/>
+    <property name="pivot" type="bool" value="false"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="65" name="mid" type="spring" x="215.997" y="196">
+   <properties>
+    <property name="block" type="bool" value="false"/>
+    <property name="k" type="float" value="1.2"/>
+    <property name="length" type="int" value="0"/>
+    <property name="offset" type="int" value="0"/>
+    <property name="p1" type="int" value="7"/>
+    <property name="p2" type="int" value="3"/>
+    <property name="pivot" type="bool" value="true"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="66" name="mid" type="spring" x="1017.33" y="196">
+   <properties>
+    <property name="block" type="bool" value="false"/>
+    <property name="k" type="float" value="1.2"/>
+    <property name="length" type="int" value="0"/>
+    <property name="offset" type="int" value="0"/>
+    <property name="p1" type="int" value="6"/>
+    <property name="p2" type="int" value="2"/>
+    <property name="pivot" type="bool" value="true"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="68" name="top" type="spring" x="373.32" y="95.5777">
+   <properties>
+    <property name="block" type="bool" value="false"/>
+    <property name="k" type="float" value="1.2"/>
+    <property name="length" type="int" value="0"/>
+    <property name="offset" type="int" value="0"/>
+    <property name="p1" type="int" value="1"/>
+    <property name="p2" type="int" value="5"/>
+    <property name="pivot" type="bool" value="true"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="69" name="top" type="spring" x="508.79" y="94.5277">
+   <properties>
+    <property name="block" type="bool" value="false"/>
+    <property name="k" type="float" value="1.2"/>
+    <property name="length" type="int" value="0"/>
+    <property name="offset" type="int" value="0"/>
+    <property name="p1" type="int" value="2"/>
+    <property name="p2" type="int" value="5"/>
+    <property name="pivot" type="bool" value="true"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="70" name="top" type="spring" x="642.16" y="94.5277">
+   <properties>
+    <property name="block" type="bool" value="false"/>
+    <property name="k" type="float" value="1.2"/>
+    <property name="length" type="int" value="0"/>
+    <property name="offset" type="int" value="0"/>
+    <property name="p1" type="int" value="3"/>
+    <property name="p2" type="int" value="5"/>
+    <property name="pivot" type="bool" value="true"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="71" name="top" type="spring" x="774.479" y="96.6277">
+   <properties>
+    <property name="block" type="bool" value="false"/>
+    <property name="k" type="float" value="1.2"/>
+    <property name="length" type="int" value="0"/>
+    <property name="offset" type="int" value="0"/>
+    <property name="p1" type="int" value="4"/>
+    <property name="p2" type="int" value="5"/>
+    <property name="pivot" type="bool" value="true"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="72" name="top" type="spring" x="912.05" y="96.6277">
+   <properties>
+    <property name="block" type="bool" value="false"/>
+    <property name="k" type="float" value="1.2"/>
+    <property name="length" type="int" value="0"/>
+    <property name="offset" type="int" value="0"/>
+    <property name="p1" type="int" value="5"/>
+    <property name="p2" type="int" value="5"/>
+    <property name="pivot" type="bool" value="true"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="73" name="top" type="spring" x="240" y="90.6667">
+   <properties>
+    <property name="block" type="bool" value="false"/>
+    <property name="k" type="float" value="1.2"/>
+    <property name="length" type="int" value="0"/>
+    <property name="offset" type="int" value="0"/>
+    <property name="p1" type="int" value="1"/>
+    <property name="p2" type="int" value="5"/>
+    <property name="pivot" type="bool" value="true"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="74" name="top" type="spring" x="1041.33" y="90.6667">
+   <properties>
+    <property name="block" type="bool" value="false"/>
+    <property name="k" type="float" value="1.2"/>
+    <property name="length" type="int" value="0"/>
+    <property name="offset" type="int" value="0"/>
+    <property name="p1" type="int" value="6"/>
+    <property name="p2" type="int" value="5"/>
+    <property name="pivot" type="bool" value="true"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="77" name="bottom" type="spring" x="361.323" y="347.578">
+   <properties>
+    <property name="block" type="bool" value="true"/>
+    <property name="k" type="float" value="1.2"/>
+    <property name="length" type="int" value="225"/>
+    <property name="offset" type="int" value="0"/>
+    <property name="p1" type="int" value="7"/>
+    <property name="p2" type="int" value="1"/>
+    <property name="pivot" type="bool" value="false"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="78" name="bottom" type="spring" x="496.793" y="346.528">
+   <properties>
+    <property name="block" type="bool" value="true"/>
+    <property name="k" type="float" value="1.2"/>
+    <property name="length" type="int" value="200"/>
+    <property name="offset" type="int" value="180"/>
+    <property name="p1" type="int" value="8"/>
+    <property name="p2" type="int" value="1"/>
+    <property name="pivot" type="bool" value="false"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="79" name="bottom" type="spring" x="630.163" y="346.528">
+   <properties>
+    <property name="block" type="bool" value="true"/>
+    <property name="k" type="float" value="1.2"/>
+    <property name="length" type="int" value="200"/>
+    <property name="offset" type="int" value="360"/>
+    <property name="p1" type="int" value="9"/>
+    <property name="p2" type="int" value="1"/>
+    <property name="pivot" type="bool" value="false"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="80" name="bottom" type="spring" x="762.482" y="348.628">
+   <properties>
+    <property name="block" type="bool" value="true"/>
+    <property name="k" type="float" value="1.2"/>
+    <property name="length" type="int" value="200"/>
+    <property name="offset" type="int" value="540"/>
+    <property name="p1" type="int" value="10"/>
+    <property name="p2" type="int" value="1"/>
+    <property name="pivot" type="bool" value="false"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="81" name="bottom" type="spring" x="900.053" y="348.628">
+   <properties>
+    <property name="block" type="bool" value="true"/>
+    <property name="k" type="float" value="1.2"/>
+    <property name="length" type="int" value="200"/>
+    <property name="offset" type="int" value="720"/>
+    <property name="p1" type="int" value="11"/>
+    <property name="p2" type="int" value="1"/>
+    <property name="pivot" type="bool" value="false"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="83" name="bottom" type="spring" x="1029.33" y="342.667">
+   <properties>
+    <property name="block" type="bool" value="true"/>
+    <property name="k" type="float" value="1.2"/>
+    <property name="length" type="int" value="225"/>
+    <property name="offset" type="int" value="900"/>
+    <property name="p1" type="int" value="12"/>
+    <property name="p2" type="int" value="1"/>
+    <property name="pivot" type="bool" value="false"/>
+   </properties>
+   <point/>
+  </object>
+ </objectgroup>
+</map>
