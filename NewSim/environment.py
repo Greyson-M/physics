@@ -46,12 +46,12 @@ class Environment():
         self.breakable = False
 
         self.grid = Grid(self, 120)
-        self.map = load_pygame("D:/Documents/programming/physics/NewSim/boxes.tmx")
+        #self.map = load_pygame("D:/Documents/programming/physics/NewSim/boxes.tmx")
         
         
         pygame.mixer.init()
-        self.combustion_sound = pygame.mixer.Sound("D:/Documents/programming/physics/NewSim/audio/combustion.wav")
-        self.combustion_sound.set_volume(VOLUME)
+        #self.combustion_sound = pygame.mixer.Sound("D:/Documents/programming/physics/NewSim/audio/combustion.wav")
+        #self.combustion_sound.set_volume(VOLUME)
 
     def update(self, clock):
         #print(self.buttonList[0].pos)

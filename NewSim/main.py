@@ -237,7 +237,30 @@ def newConstriantTest():
     spring1 = environment.addSpring(p1, piv1, None, 0.5, name='1')
     spring2 = environment.addSpring(p1, piv2, None, 0.5, name='2')
 
+def structure():
+    pivleft = environment.addPivot(Pivot(environment, np.array(( 300, 600))))
+    pivright = environment.addPivot(Pivot(environment, np.array(( 900, 600))))
+    bot1 = environment.addPuck(Puck(environment, 10, np.array(( 450, 600)), radius=3, color=((0, 0, 0)), name='red'))
+    bot2 = environment.addPuck(Puck(environment, 10, np.array(( 600, 600)), radius=3, color=((0, 0, 0)), name='red'))
+    bot3 = environment.addPuck(Puck(environment, 10, np.array(( 750, 600)), radius=3, color=((0, 0, 0)), name='red'))
+    botconst1 = environment.addConstraint(Constraint(bot1, pivleft, 150))
+    botconst2 = environment.addConstraint(Constraint(bot2, bot1, 150))
+    botconst3 = environment.addConstraint(Constraint(bot3, bot2, 150))
+    botconst4 = environment.addConstraint(Constraint(bot3, pivright, 150))
 
+    mid1 = environment.addPuck(Puck(environment, 10, np.array(( 450, 450)), radius=3, color=((0, 0, 0)), name='red'))
+    mid2 = environment.addPuck(Puck(environment, 10, np.array(( 750, 450)), radius=3, color=((0, 0, 0)), name='red'))
+    midconst1 = environment.addConstraint(Constraint(mid1, pivleft, 150))
+    midconst2 = environment.addConstraint(Constraint(mid1, bot1, 150))
+    midconst3 = environment.addConstraint(Constraint(mid1, bot2, 150))
+    midconst4 = environment.addConstraint(Constraint(mid2, pivright, 150))
+    midconst5 = environment.addConstraint(Constraint(mid2, bot2, 150))
+    midconst6 = environment.addConstraint(Constraint(mid2, bot3, 150))
+
+    top1 = environment.addPuck(Puck(environment, 10, np.array(( 600, 300)), radius=3, color=((0, 0, 0)), name='red'))
+    topconst1 = environment.addConstraint(Constraint(top1, mid1, 150))
+    topconst2 = environment.addConstraint(Constraint(top1, bot2, 150))
+    topconst3 = environment.addConstraint(Constraint(top1, mid2, 150))
 
 
 #cloth(10, 1, 0, 20)
@@ -249,9 +272,9 @@ def newConstriantTest():
 
 #constraintTest()
 #spinnerTest()
-cylinderTest()
+#cylinderTest()
 #newConstriantTest()
-
+structure()
 #loadMap(environment.map)
 
 #environment.addPuck(Puck(environment, 10, np.array(( 100, 100)), radius=10, color=((0, 0, 0)), name='red'))
