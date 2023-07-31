@@ -29,6 +29,7 @@ class Environment():
         self.spinnerList = []
         self.cylinderList = []
         self.generatorList = []
+        self.tubeList = []
 
         self.totalEnergy = 0
 
@@ -41,7 +42,7 @@ class Environment():
 
         self.t = 0
 
-        self.g = 9.81
+        self.g = g
         self.stiffness = 1
         self.breakable = False
 
@@ -145,6 +146,30 @@ class Environment():
                         p.prevPos[1] = currpos[1]
                         p.vel[1] = -p.vel[1] * mult
 
+        for tube in self.tubeList:
+            ps = [tube.p1, tube.p2]
+            for p in ps:
+                if not tube.vertical:
+                    if tube.rect.collidepoint(p.pos + np.array((p.radius, p.radius))) or tube.rect.collidepoint(p.pos - np.array((p.radius, p.radius))):
+                        currpos = p.pos
+                        nextpos = p.pos + p.vel + p.accel * dt**2 * SPEED
+                        x = nextpos[0]
+                        y = nextpos[1]
+                        xleft = nextpos[0] - p.radius
+                        xright = nextpos[0] + p.radius
+                        ytop = nextpos[1] - p.radius
+                        ybottom = nextpos[1] + p.radius
+                        if tube.top.collidepoint(ytop, x) and tube.bottom.collidepoint(ybottom, x):
+                            p.pos[1] = tube.rect.centery
+                        elif tube.top.collidepoint(x, ytop):
+                            p.pos[1] = p.prevPos[1]
+                            p.prevPos[1] = currpos[1]
+                            p.vel[1] = -p.vel[1] * mult
+                        elif tube.bottom.collidepoint(x, ybottom):
+                            p.pos[1] = p.prevPos[1]
+                            p.prevPos[1] = currpos[1]
+                            p.vel[1] = -p.vel[1] * mult
+
 
 
         self.WIN.fill((217, 217, 217))
@@ -228,3 +253,7 @@ class Environment():
     def addGenerator(self, generator):
         self.generatorList.append(generator)
         return generator
+    
+    def addTube(self, tube):
+        self.tubeList.append(tube)
+        return tube

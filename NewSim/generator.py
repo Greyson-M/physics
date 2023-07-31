@@ -8,10 +8,13 @@ import math
 from Utils import *
 
 class Generator:
-    def __init__(self, env, pos, radius, mass) -> None:
+    def __init__(self, env, pos, radius, mass, start='L') -> None:
         self.env = env
         self.piv = Pivot(env, pos, "Generator")
-        self.puck = Puck(env, mass, pos + np.array((radius + 4, 0)), np.array((0,0)), BLACK, 4)
+        if start == 'L':
+            self.puck = Puck(env, mass, pos + np.array((radius + 4, 0)), np.array((0,0)), BLACK, 4)
+        if start == 'R':
+            self.puck = Puck(env, mass, pos - np.array((radius + 4, 0)), np.array((0,0)), BLACK, 4)
         self.constraint = Constraint(self.piv, self.puck, radius)
 
         self.radius = radius
@@ -23,7 +26,8 @@ class Generator:
         self.powerData = []
 
     def __del__(self):
-        print ("AVG POWER: " + str(round(sum(self.powerData) / len(self.powerData))))
+        #print ("AVG POWER: " + str(round(sum(self.powerData) / len(self.powerData))))
+        pass
 
     def draw(self, mouse_pos, t):
         self.t = t
