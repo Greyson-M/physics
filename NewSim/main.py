@@ -284,7 +284,7 @@ const2 = environment.addConstraint(Constraint(m2, piv, 50))
 #spinnerTest()
 #cylinderTest()
 #newConstriantTest()
-tubeTest()
+#tubeTest()
 #cannonTest()
 
 #loadMap(environment.map)
