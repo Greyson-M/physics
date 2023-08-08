@@ -48,6 +48,13 @@ class Environment():
                 if hasattr(obj, "energy"):
                     currTotalE += obj.energy
 
+        for m in self.massList:
+            for n in self.massList:
+                if m != n:
+                    dist = m.pos.distance(n.pos)
+                    if dist <= (m.radius + n.radius):
+                        m.interCollide(dist, n)
+
         if self.clock.get_rawtime() % 100 == 0:
             if len(self.totalE) > 20:
                 self.totalE.pop(0)
