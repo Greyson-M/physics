@@ -24,6 +24,12 @@ class Constraint():
         dirx = (self.p1.pos.x - self.p2.pos.x) / dist
         diry = (self.p1.pos.y - self.p2.pos.y) / dist
 
+        tension = Vector(dirx * error, diry * error)
+        if tension.x < 0 or tension.y < 0:
+            self.color = RED
+        if tension.x > 0 or tension.y > 0:
+            self.color = GREEN
+
         if not isinstance(self.p1, Pivot):
             if not self.p1.held:
                 self.p1.pos.x += dirx * error / 2
