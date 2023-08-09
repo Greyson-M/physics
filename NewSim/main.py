@@ -290,7 +290,6 @@ structure()
 #spinnerTest()
 #cylinderTest()
 #newConstriantTest()
-tubeTest()
 #cannonTest()
 
 #loadMap(environment.map)
