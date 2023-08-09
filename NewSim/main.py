@@ -10,6 +10,7 @@ from block import Block
 from spinner import Spinner
 from cylinder import Cylinder
 from generator import Generator
+from tube import Tube
 import numpy as np
 from pivot import Pivot
 from pytmx.util_pygame import load_pygame
@@ -202,15 +203,17 @@ def constraintTest():
     #environment.addConstraint(Constraint(p5, piv3, 50))
 
 def spinnerTest():
-    cylinder = environment.addCylinder(Cylinder(environment, pygame.Rect(550, 500, 100, 25), "right"))
-    p1 = environment.addPuck(Puck(environment, 5, np.array(( 800, 500)), radius=10, color=((0, 0, 0)), name='red'))
-    p2 = environment.addPuck(Puck(environment, 10, np.array(( 840, 500)), radius=10, color=((0, 0, 0))))
-    p3 = environment.addPuck(Puck(environment, 20, np.array(( 880, 500)), radius=10, color=((0, 0, 0))))
-    spin = environment.addSpinner(Spinner(75, 4, p1))
+    
+    p1 = environment.addPuck(Puck(environment, 5, np.array(( 740, 515)), radius=3, color=((0, 0, 0)), name='red'))
+    p2 = environment.addPuck(Puck(environment, 10, np.array(( 640, 515)), radius=15, color=((0, 0, 0))))
+    p3 = environment.addPuck(Puck(environment, 20, np.array(( 880, 500)), radius=15, color=((0, 0, 0))))
+    #cylinder = environment.addCylinder(Cylinder(environment, pygame.Rect(550, 500, 100, 30), "right", p2))
+    tube = environment.addTube(Tube(pygame.Rect(500, 500, 150, 30), p3, p2))
+    spin = environment.addSpinner(Spinner(20, 4, p1))
     #piv = environment.addPivot(Pivot(environment, np.array(( 600, bottomwall))))
     #spring = environment.addSpring(p1, piv, None, 0.5, name='1')
     constraint = environment.addConstraint(Constraint(p1, p2, 40))
-    const2 = environment.addConstraint(Constraint(p2, p3, 40))
+    #const2 = environment.addConstraint(Constraint(p2, p3, 40))
 
 
 def cylinderTest():
@@ -270,11 +273,24 @@ def structure():
 #pendulum(1)
 #bridge(0)
 
+structure()
+
+#piv = environment.addPivot(Pivot(environment, np.array(( 350, 250))))
+#m1 = environment.addPuck(Puck(environment, 1, np.array(( 350, 75)), vel = np.array((5, 2)), radius=10, color=((255, 0, 0)), name='red'))
+#m2 = environment.addPuck(Puck(environment, 1, np.array(( 350, 110)), radius=10, color=((0, 255, 0)), name='green'))
+#const = environment.addConstraint(Constraint(m1, m2, 50))
+#const2 = environment.addConstraint(Constraint(m2, piv, 50))
+
+#NEWTON BALL SIM
+#.....
+#.....
+#>>....
+
 #constraintTest()
 #spinnerTest()
 #cylinderTest()
 #newConstriantTest()
-structure()
+
 #loadMap(environment.map)
 
 #environment.addPuck(Puck(environment, 10, np.array(( 100, 100)), radius=10, color=((0, 0, 0)), name='red'))
@@ -373,6 +389,9 @@ def main():
 
         for g in environment.generatorList:
             g.draw(mouse_pos, t)
+
+        for tube in environment.tubeList:
+            tube.draw()
 
 
         pygame.display.flip()

@@ -15,6 +15,7 @@ class Cylinder():
         self.R = GAS_CONSTANT
         self.T = 400
         self.pressure = (self.n*self.R*self.T)/self.combustionArea
+        self.tempGauge = 0 
 
 
         if self.head != "top":
@@ -45,12 +46,16 @@ class Cylinder():
 
         pressureDisp = self.environment.font.render("Pressure: " + str(round(self.pressure)), True, BLACK)
         self.environment.WIN.blit(pressureDisp, (self.rect.x, self.rect.y - 20))
+        tempDisp = self.environment.font.render("Temperature: " + str(round(self.T)), True, BLACK)
+        self.environment.WIN.blit(tempDisp, (self.rect.x, self.rect.y - 40))
 
     def update(self):
 
         if self.rect.collidepoint(self.drive.pos):
+            #self.tempGauge = (self.n * self.R * 100000) / (self.pressure * self.combustionArea)
             threshold = 2.2
             if self.drive.pos[0] <= self.rect.left + self.drive.radius * threshold:
+            #if self.tempGauge > 100:
                 #print("BOOM!")
                 pygame.mixer.stop()
                 self.T *= 1.5
@@ -59,6 +64,7 @@ class Cylinder():
             else:
                 self.T = 300
                 self.drive.color = ((75, 175, 200))
+
 
             self.drive.pos[1]= self.rect.centery
             self.pressure = (self.n*self.R*self.T)/self.combustionArea
