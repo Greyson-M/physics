@@ -52,6 +52,14 @@ class Environment():
         center_dist = np.array([self.WIDTH/2, self.HEIGHT/2]) - mass.pos
         mass.addVelocity(center_dist * atrraction_constant)
         
+    def checkCollisionNew(self, mass):
+        directions = np.array([[1, 0], [0, 1], [-1, 0], [0, -1]])
+        for dir in directions:
+            adjacent_cell = self.grid.get_cell(mass.pos + dir * self.cell_size)
+            if len(adjacent_cell.particles) > 0:
+                for p in adjacent_cell.particles:
+                    if p != mass:
+                        self.checkCollision(mass, p)
 
     def checkCollision(self, mass1, mass2):
         response_constant = 0.75
@@ -97,9 +105,11 @@ class Environment():
 
             self.attract(mass)
 
-            for otherMass in self.massList:
+            '''for otherMass in self.massList:
                 if mass != otherMass:
-                    self.checkCollision(mass, otherMass)
+                    self.checkCollision(mass, otherMass)'''
+            
+            self.checkCollisionNew(mass)
 
             mass.update()
 
