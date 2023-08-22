@@ -269,11 +269,11 @@ def cannonTest():
 #pendulum(1)
 #bridge(0)
 
-piv = environment.addPivot(Pivot(environment, np.array(( 350, 250))))
+'''piv = environment.addPivot(Pivot(environment, np.array(( 350, 250))))
 m1 = environment.addPuck(Puck(environment, 1, np.array(( 350, 75)), vel = np.array((5, 2)), radius=10, color=((255, 0, 0)), name='red'))
 m2 = environment.addPuck(Puck(environment, 1, np.array(( 350, 110)), radius=10, color=((0, 255, 0)), name='green'))
 const = environment.addConstraint(Constraint(m1, m2, 50))
-const2 = environment.addConstraint(Constraint(m2, piv, 50))
+const2 = environment.addConstraint(Constraint(m2, piv, 50))'''
 
 #NEWTON BALL SIM
 #.....
@@ -338,11 +338,18 @@ def main():
                         b.held = True
                         environment.heldBlock = b
 
+                if len(environment.puckList) < 1:
+                    environment.addPuck(Puck(environment, 20, mouse_pos, radius=10))
+                    environment.heldPuck = None
+
                 for p in environment.puckList:
                     if (mouse_pos[0] < (p.pos[0] + p.radius)) and (mouse_pos[0] > (p.pos[0] - p.radius)):
                         if (mouse_pos[1] < (p.pos[1] + p.radius)) and (mouse_pos[1] > (p.pos[1] - p.radius)):
                             p.held = True
                             environment.heldPuck = p
+
+                if environment.heldPuck == None:
+                    environment.addPuck(Puck(environment, 20, mouse_pos, radius=10))
 
             if event.type == pygame.MOUSEBUTTONUP and event.button == 1:
                 if environment.heldBlock != None:
