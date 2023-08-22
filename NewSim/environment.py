@@ -47,7 +47,7 @@ class Environment():
         self.breakable = False
 
         self.grid = Grid(self, 120)
-        #self.map = load_pygame("D:/Documents/programming/physics/NewSim/boxes.tmx")
+        self.map = load_pygame("C:/documents/programming/physics/physics/NewSim/boxes.tmx")
         
         
         pygame.mixer.init()

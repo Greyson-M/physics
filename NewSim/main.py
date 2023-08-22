@@ -59,11 +59,11 @@ def pendulum(stiff):
     pivot = environment.addPivot(Pivot(environment, np.array(( 800, 200))))
     puck1 = environment.addPuck(Puck(environment, 1, np.array(( 800, 250)), radius=10, color=((255, 0, 0)), name='red'))
     puck2 = environment.addPuck(Puck(environment, 2, np.array(( 800, 300)), radius=10, color=((0, 255, 0)), name='green'))
-    puck3 = environment.addPuck(Puck(environment, 10, np.array(( 800, 350)), radius=10, color=((0, 0, 255)), name='blue'))
+    #puck3 = environment.addPuck(Puck(environment, 10, np.array(( 800, 350)), radius=10, color=((0, 0, 255)), name='blue'))
 
     environment.addSpring(pivot, puck1, None, stiff)
     environment.addSpring(puck1, puck2, None, stiff)
-    environment.addSpring(puck2, puck3, None, stiff)
+    #environment.addSpring(puck2, puck3, None, stiff)
 
 def bridge(stiff):
     Pivot1 = environment.addPivot(Pivot(environment, np.array(( 200, 200))))
@@ -266,14 +266,14 @@ def structure():
     topconst3 = environment.addConstraint(Constraint(top1, mid2, 150))
 
 
-#cloth(10, 1, 0, 20)
+cloth(10, 1, 0, 20)
 #loadMap(environment.map)
 #square()
 #triangle()
 #pendulum(1)
 #bridge(0)
 
-structure()
+#structure()
 
 #piv = environment.addPivot(Pivot(environment, np.array(( 350, 250))))
 #m1 = environment.addPuck(Puck(environment, 1, np.array(( 350, 75)), vel = np.array((5, 2)), radius=10, color=((255, 0, 0)), name='red'))
@@ -304,7 +304,7 @@ structure()
 #environment.blockList.append(Block(environment, 1, np.array(( 350, 110)), 50, 25, color=BLACK, vel=np.array((0, -5)), name="bottom"))
 
 #environment.addButton(GravButton(environment, "grav", pygame.Rect(100, 680, 60, 20)))
-#environment.sliderList.append(GravSlider(environment, (200, 690), (80, 20), 0, -20, 100))
+environment.sliderList.append(GravSlider(environment, (200, 690), (80, 20), 0, -20, 100))
 environment.sliderList.append(StiffSlider(environment, (600, 690), (80, 20), 0.25, -0.5, 3))
 environment.addButton(BreakButton(environment, "break", pygame.Rect(100, 680, 60, 20)))
 
