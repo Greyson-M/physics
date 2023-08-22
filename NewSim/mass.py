@@ -56,7 +56,7 @@ class Mass:
             self.vel = (self.pos - self.prevPos) * 2
 
         if not self.held:
-            integration = "VERLET"
+            integration = "EULER"
 
             if integration == "EULER":
                 #EULER INTEGRATION

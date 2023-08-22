@@ -343,11 +343,18 @@ def main():
                         b.held = True
                         environment.heldBlock = b
 
+                if len(environment.puckList) < 1:
+                    environment.addPuck(Puck(environment, 20, mouse_pos, radius=10))
+                    environment.heldPuck = None
+
                 for p in environment.puckList:
                     if (mouse_pos[0] < (p.pos[0] + p.radius)) and (mouse_pos[0] > (p.pos[0] - p.radius)):
                         if (mouse_pos[1] < (p.pos[1] + p.radius)) and (mouse_pos[1] > (p.pos[1] - p.radius)):
                             p.held = True
                             environment.heldPuck = p
+
+                if environment.heldPuck == None:
+                    environment.addPuck(Puck(environment, 20, mouse_pos, radius=10))
 
             if event.type == pygame.MOUSEBUTTONUP and event.button == 1:
                 if environment.heldBlock != None:
