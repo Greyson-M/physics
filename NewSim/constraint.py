@@ -12,6 +12,8 @@ class Constraint():
 
         self.environment = self.p1.environment
 
+        self.color = BLACK
+
 
     def update(self):
         distVec = self.p2.pos - self.p1.pos
@@ -20,6 +22,15 @@ class Constraint():
         delta_dist = self.length - distScal
         dx = (self.p1.pos[0] - self.p2.pos[0]) / distScal
         dy = (self.p1.pos[1] - self.p2.pos[1]) / distScal
+
+        dhat = distVec / distScal
+        #print (dhat)
+
+        if dx < 0:
+            self.color = ((255, 0, 0))
+        elif dx > 0:
+            self.color = ((0, 255, 0))
+        
         
         if self.p1.type != "Pivot":
             self.p1.pos[0] += dx * delta_dist * 0.5
@@ -67,4 +78,4 @@ class Constraint():
             pygame.draw.line(self.p1.environment.WIN, BLACK, self.p1.pos, self.p2.pos, 3)
 
 
-        pygame.draw.line(self.p1.environment.WIN, BLACK, self.p1.pos, self.p2.pos, 3)
+        pygame.draw.line(self.p1.environment.WIN, self.color, self.p1.pos, self.p2.pos, 3)

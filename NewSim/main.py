@@ -240,26 +240,30 @@ def newConstriantTest():
     spring1 = environment.addSpring(p1, piv1, None, 0.5, name='1')
     spring2 = environment.addSpring(p1, piv2, None, 0.5, name='2')
 
-def tubeTest():
-    gen = environment.addGenerator(Generator(environment, np.array((760, 520)), 20, 200))
-    p1 = environment.addPuck(Puck(environment, 50, np.array(( 675, 520)), radius=20, color=((75, 175, 200)), name='red'))
+def structure():
+    pivleft = environment.addPivot(Pivot(environment, np.array(( 300, 600))))
+    pivright = environment.addPivot(Pivot(environment, np.array(( 900, 600))))
+    bot1 = environment.addPuck(Puck(environment, 10, np.array(( 450, 600)), radius=3, color=((0, 0, 0)), name='red'))
+    bot2 = environment.addPuck(Puck(environment, 10, np.array(( 600, 600)), radius=3, color=((0, 0, 0)), name='red'))
+    bot3 = environment.addPuck(Puck(environment, 10, np.array(( 750, 600)), radius=3, color=((0, 0, 0)), name='red'))
+    botconst1 = environment.addConstraint(Constraint(bot1, pivleft, 150))
+    botconst2 = environment.addConstraint(Constraint(bot2, bot1, 150))
+    botconst3 = environment.addConstraint(Constraint(bot3, bot2, 150))
+    botconst4 = environment.addConstraint(Constraint(bot3, pivright, 150))
 
-    gen2 = environment.addGenerator(Generator(environment, np.array((495, 520)), 20, 200, start='R'))
-    p2 = environment.addPuck(Puck(environment, 50, np.array(( 580, 520)), radius=20, color=((75, 175, 200)), name='red'))
+    mid1 = environment.addPuck(Puck(environment, 10, np.array(( 450, 450)), radius=3, color=((0, 0, 0)), name='red'))
+    mid2 = environment.addPuck(Puck(environment, 10, np.array(( 750, 450)), radius=3, color=((0, 0, 0)), name='red'))
+    midconst1 = environment.addConstraint(Constraint(mid1, pivleft, 150))
+    midconst2 = environment.addConstraint(Constraint(mid1, bot1, 150))
+    midconst3 = environment.addConstraint(Constraint(mid1, bot2, 150))
+    midconst4 = environment.addConstraint(Constraint(mid2, pivright, 150))
+    midconst5 = environment.addConstraint(Constraint(mid2, bot2, 150))
+    midconst6 = environment.addConstraint(Constraint(mid2, bot3, 150))
 
-    tube = environment.addTube(Tube(pygame.Rect(540, 500, 155, 40), p1, p2))
-
-    const1 = environment.addConstraint(Constraint(p1, gen.puck, 40))
-    const2 = environment.addConstraint(Constraint(p2, gen2.puck, 40))
-
-def cannonTest():
-    p1 = environment.addPuck(Puck(environment, 100, np.array(( 295, 520)), radius=20, color=((0, 0, 0)), name='red'))
-    cyl = environment.addCylinder(Cylinder(environment, pygame.Rect(200, 500, 130, 40), "right", p1))
-    piv = environment.addPivot(Pivot(environment, np.array(( 190, 520))))
-    spring = environment.addSpring(p1, piv, None, 0.5, name='1')
-    
-
-
+    top1 = environment.addPuck(Puck(environment, 10, np.array(( 600, 300)), radius=3, color=((0, 0, 0)), name='red'))
+    topconst1 = environment.addConstraint(Constraint(top1, mid1, 150))
+    topconst2 = environment.addConstraint(Constraint(top1, bot2, 150))
+    topconst3 = environment.addConstraint(Constraint(top1, mid2, 150))
 
 
 #cloth(10, 1, 0, 20)
@@ -269,11 +273,13 @@ def cannonTest():
 #pendulum(1)
 #bridge(0)
 
-'''piv = environment.addPivot(Pivot(environment, np.array(( 350, 250))))
-m1 = environment.addPuck(Puck(environment, 1, np.array(( 350, 75)), vel = np.array((5, 2)), radius=10, color=((255, 0, 0)), name='red'))
-m2 = environment.addPuck(Puck(environment, 1, np.array(( 350, 110)), radius=10, color=((0, 255, 0)), name='green'))
-const = environment.addConstraint(Constraint(m1, m2, 50))
-const2 = environment.addConstraint(Constraint(m2, piv, 50))'''
+structure()
+
+#piv = environment.addPivot(Pivot(environment, np.array(( 350, 250))))
+#m1 = environment.addPuck(Puck(environment, 1, np.array(( 350, 75)), vel = np.array((5, 2)), radius=10, color=((255, 0, 0)), name='red'))
+#m2 = environment.addPuck(Puck(environment, 1, np.array(( 350, 110)), radius=10, color=((0, 255, 0)), name='green'))
+#const = environment.addConstraint(Constraint(m1, m2, 50))
+#const2 = environment.addConstraint(Constraint(m2, piv, 50))
 
 #NEWTON BALL SIM
 #.....
@@ -284,7 +290,6 @@ const2 = environment.addConstraint(Constraint(m2, piv, 50))'''
 #spinnerTest()
 #cylinderTest()
 #newConstriantTest()
-#tubeTest()
 #cannonTest()
 
 #loadMap(environment.map)
