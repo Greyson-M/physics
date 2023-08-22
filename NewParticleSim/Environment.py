@@ -1,4 +1,6 @@
 from Mass import Mass
+from Grid import Grid
+
 import pygame
 import numpy as np
 
@@ -25,17 +27,31 @@ class Environment():
         self.font = pygame.font.SysFont(None, 18)
 
         self.massList = []
+        self.particle_size = 10
+
+        self.cell_size = self.particle_size * 2
+        self.grid = Grid(self)
 
         self.totalEnergy = 0
+        self.E = []
         self.E_disp = 0
 
         self.frame_count = 0
+
+        self.hovering = False
     
     def attract(self, mass):
         atrraction_constant = 0.01
+        damping_constant = -3 * self.dt
+
+        '''if (mass.pos[0] < self.WIDTH/2 + mass.radius and mass.pos[0] > self.WIDTH/2 - mass.radius and 
+            mass.pos[1] < self.HEIGHT/2 + mass.radius and mass.pos[1] > self.HEIGHT/2 - mass.radius):
+            print ("cross center")
+            mass.addVelocity(mass.getVelocity() * damping_constant)'''
 
         center_dist = np.array([self.WIDTH/2, self.HEIGHT/2]) - mass.pos
         mass.addVelocity(center_dist * atrraction_constant)
+        
 
     def checkCollision(self, mass1, mass2):
         response_constant = 0.75
@@ -52,8 +68,11 @@ class Environment():
             mass_ratio_2 = mass2.mass / (mass1.mass + mass2.mass)
             delta = (minDist - dist) * 0.5 * response_constant
 
-            mass1.pos += dhat * delta * mass_ratio_2
-            mass2.pos -= dhat * delta * mass_ratio_1
+            try:
+                mass1.pos += dhat * delta * mass_ratio_2
+                mass2.pos -= dhat * delta * mass_ratio_1
+            except:
+                print ("collision error")
 
     def displayText(self, text, pos):
         text = self.font.render(text, True, self.BLACK)
@@ -62,12 +81,20 @@ class Environment():
     def update(self):
         self.WIN.fill(self.BG_COLOR)
         self.clock.tick(self.FPS)
+        mouse_pos = pygame.mouse.get_pos()
+        mouse_pos = np.array([mouse_pos[0], mouse_pos[1]])
+
+        self.grid.draw()
 
         self.frame_count += 1
 
         self.totalEnergy = 0
 
         for mass in self.massList:
+            if mass.rect.collidepoint(mouse_pos):
+                self.hovering = True
+            else: self.hovering = False
+
             self.attract(mass)
 
             for otherMass in self.massList:
@@ -78,13 +105,20 @@ class Environment():
 
             self.totalEnergy += mass.kinetic_energy
 
-        if self.frame_count % 20 == 0:
-            self.E_disp = self.totalEnergy
+        if self.frame_count % 5 == 0:
+            self.E.append(self.totalEnergy)
 
-        self.displayText("Total Energy: " + str(round(self.E_disp)), (10, 10))
+        if self.frame_count % 30 == 0:
+            self.E_disp = np.mean(self.E)
+            self.E = []
+
+        try:
+            self.displayText("Total Energy: " + str(round(self.E_disp)), (10, 10))
+        except:
+            print ("energy display error")
 
         pygame.display.update()
-        pygame.display.set_caption("Particle Simulation: " + str(round(self.clock.get_fps())) + " FPS")
+        pygame.display.set_caption("Particle Simulation: " + str(round(self.clock.get_fps())) + " FPS | " + str(len(self.massList)) + " Particles | hovering: " + str(self.hovering) )
         
     def addMass(self, env, radius, mass, pos, color=(0, 0, 0)):
         self.massList.append(Mass(env, radius, mass, pos, color))
