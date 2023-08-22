@@ -53,13 +53,40 @@ class Environment():
         mass.addVelocity(center_dist * atrraction_constant)
         
     def checkCollisionNew(self, mass):
-        directions = np.array([[1, 0], [0, 1], [-1, 0], [0, -1]])
+        eps = 0.0001
+        directions = np.array([[1, 0], [0, 1], [-1, 0], [0, -1], [1, 1], [-1, -1], [-1, 1], [1, -1]])
+
         for dir in directions:
-            adjacent_cell = self.grid.get_cell(mass.pos + dir * self.cell_size)
+            adjacent_cell = self.grid.getCell(mass.pos + dir * self.cell_size)
             if len(adjacent_cell.particles) > 0:
                 for p in adjacent_cell.particles:
                     if p != mass:
-                        self.checkCollision(mass, p)
+                        disp = mass.pos - p.pos
+                        distsq = disp[0]*disp[0] + disp[1]*disp[1]
+                        minDist = mass.radius + p.radius
+                        if distsq < minDist*minDist and distsq > eps:
+                            self.collisionResponse(mass, p)
+
+    def collisionResponse(self, mass1, mass2):
+        response_constant = 0.5
+
+        dist = np.linalg.norm(mass1.pos - mass2.pos)
+        dhat = (mass1.pos - mass2.pos) / dist
+        minDist = mass1.radius + mass2.radius
+
+        mass_ratio_1 = mass1.mass / (mass1.mass + mass2.mass)
+        mass_ratio_2 = mass2.mass / (mass1.mass + mass2.mass)
+        delta = (minDist - dist) * 0.5 * response_constant
+
+        try:
+            mass1.pos += dhat * delta * mass_ratio_2
+            mass2.pos -= dhat * delta * mass_ratio_1
+            #print (dhat * delta * mass_ratio_2)
+        except Exception as e:
+            print ("collision error")
+            print (dhat * delta * mass_ratio_2)
+            mass1.pos = np.add(mass1.pos, dhat * delta * mass_ratio_2)
+            mass2.pos = np.add(mass2.pos, -dhat * delta * mass_ratio_1)
 
     def checkCollision(self, mass1, mass2):
         response_constant = 0.75
@@ -92,7 +119,7 @@ class Environment():
         mouse_pos = pygame.mouse.get_pos()
         mouse_pos = np.array([mouse_pos[0], mouse_pos[1]])
 
-        self.grid.draw()
+        #self.grid.draw()
 
         self.frame_count += 1
 
@@ -105,11 +132,11 @@ class Environment():
 
             self.attract(mass)
 
-            '''for otherMass in self.massList:
+            for otherMass in self.massList:
                 if mass != otherMass:
-                    self.checkCollision(mass, otherMass)'''
+                    self.checkCollision(mass, otherMass)
             
-            self.checkCollisionNew(mass)
+            #self.checkCollisionNew(mass)
 
             mass.update()
 

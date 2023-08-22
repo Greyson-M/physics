@@ -1,5 +1,5 @@
 import pygame
-
+import numpy as np
 class Grid():
     
     class Cell:
@@ -23,8 +23,15 @@ class Grid():
 
             self.particles = leftover
 
-            if len(self.particles) > 1:
+            if len(self.particles) == 1:
+                self.color = self.env.BLUE
+            elif len(self.particles) > 1:
                 self.color = self.env.RED
+                for p in self.particles:
+                    for p2 in self.particles:
+                        if p != p2:
+                            self.env.collisionResponse(p, p2)
+
             else:
                 self.color = self.env.BLACK
             
@@ -33,16 +40,20 @@ class Grid():
         self.env = env
 
         self.cells = [[self.Cell(self.env, x, y) for x in range(0, self.env.WIDTH, self.env.cell_size)] for y in range(0, self.env.HEIGHT, self.env.cell_size)]
+        self.empty_cell = self.Cell(self.env, -1, -1)
 
     def draw(self):
         for row in self.cells:
             for cell in row:
                 #print (str(cell.getIndex()) + ": " + str(len(cell.particles)) + " particles")
 
-                pygame.draw.rect(self.env.WIN, cell.color, cell.rect, 1)
+                #pygame.draw.rect(self.env.WIN, cell.color, cell.rect, 1)
 
 
                 cell.update()
 
     def getCell(self, pos):
-        return self.cells[int(pos[1] / self.env.cell_size)][int(pos[0] / self.env.cell_size)]
+        if pos[0] > 0 and pos[0] < self.env.WIDTH and pos[1] > 0 and pos[1] < self.env.HEIGHT:
+            return self.cells[int(pos[1] / self.env.cell_size)][int(pos[0] / self.env.cell_size)]
+        else:
+            return self.empty_cell

@@ -4,7 +4,7 @@ import pygame
 import numpy as np
 import matplotlib.pyplot as plt
 import matplotlib.animation as animation
-from threading import Thread
+from pyinstrument import Profiler
 
 env = Environment()
 
@@ -53,7 +53,11 @@ def plot():
     plt.show()
 
 if __name__ == "__main__":
-    main()
+    with Profiler() as p:
+        main()
+
+    p.print()
+    p.open_in_browser()
     
     
 
