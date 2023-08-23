@@ -9,8 +9,15 @@ from pyinstrument import Profiler
 env = Environment()
 
 
-def test():
-    env.addMass(env, 10, 1, np.array([env.WIDTH/2, env.HEIGHT/2]), env.RED)
+def test(partnum):
+    OFFSET = 300
+    for i in range(partnum):
+        for j in range(partnum):
+            print (np.array([i*(3 * env.particle_size + 2) + OFFSET, j*(3 * env.particle_size + 2) + OFFSET]))
+            env.addMass(env, env.particle_size, 10, np.array([i*(3 * env.particle_size + 2) + OFFSET, j*(3 * env.particle_size + 2) + OFFSET]), ((i*10) % 255, (i*20) % 255, (i*30) % 255))
+            print (env.massList[-1].pos)
+
+test(12)
 
 def main():
     run = True
@@ -24,6 +31,8 @@ def main():
                 if not env.hovering:
                     pos = pygame.mouse.get_pos()
                     env.addMass(env, env.particle_size, 1, np.array([pos[0], pos[1]]), ((pos[0] % 255), (pos[1] % 255), (pos[0] + pos[1]) % 255))
+
+     
 
 
         env.update()
@@ -58,6 +67,7 @@ if __name__ == "__main__":
 
     p.print()
     p.open_in_browser()
-    
+    #main()
+    print ("end frame count: " + str(env.frame_count))
     
 
