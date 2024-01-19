@@ -24,14 +24,15 @@ class Mass:
 
     def update(self):
         if self.pos[0] > 0 and self.pos[0] < WIDTH and self.pos[1] > 0 and self.pos[1] < HEIGHT:
-            
+            x = self.pos[0]
+            y = self.pos[1]
             self.cell = np.array([int(self.pos[0]//self.env.field.step), int(self.pos[1]//self.env.field.step)])
             #print(self.cell)
 
             #self.vel = self.env.field.cells[self.cell[1]][self.cell[0]].velocity
             #print (self.vel)
-            self.vel[0] = self.pos[1]
-            self.vel[1] = self.pos[0] * math.sin(self.pos[0])
+            self.vel[0] = y/(2*math.sqrt(x*y))
+            self.vel[1] = x/(2*math.sqrt(x*y))
             self.pos = self.pos + self.vel * dt * SPEED
             
             self.kineticEnergy = 0.5 * self.mass * self.vel**2

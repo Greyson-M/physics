@@ -7,4 +7,4 @@ dt = (1/FPS)
 SPEED = 1
 
 
-DRAW_GRID = False
+DRAW_GRID = True

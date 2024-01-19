@@ -31,8 +31,9 @@ class Field:
 
         for i, row in enumerate(self.cells):
             for j, cell in enumerate(row):
-                cell.velocity[0] = i
-                cell.velocity[1] = j * math.sin(j)
+                if i is not 0 and j is not 0:
+                    cell.velocity[0] = j/(2*math.sqrt(i*j))
+                    cell.velocity[1] = i/(2*math.sqrt(i*j))
 
 
         if DRAW_GRID: self.draw()

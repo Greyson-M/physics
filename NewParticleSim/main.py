@@ -23,7 +23,7 @@ def main():
             if event.type == pygame.MOUSEBUTTONUP:
                 if not env.hovering:
                     pos = pygame.mouse.get_pos()
-                    env.addMass(env, env.particle_size, 1, np.array([pos[0], pos[1]]), ((pos[0] % 255), (pos[1] % 255), (pos[0] + pos[1]) % 255))
+                    env.addMass(env, env.particle_size, 10, np.array([pos[0], pos[1]]), ((pos[0] % 255), (pos[1] % 255), (pos[0] + pos[1]) % 255))
 
 
         env.update()
@@ -53,11 +53,17 @@ def plot():
     plt.show()
 
 if __name__ == "__main__":
-    with Profiler() as p:
-        main()
+    profile = False
+    
+    if profile:
+        with Profiler() as p:
+            main()
 
-    p.print()
-    p.open_in_browser()
+        p.print()
+        p.open_in_browser()
+
+    else:
+        main()
     
     
 
