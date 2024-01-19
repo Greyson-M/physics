@@ -3,6 +3,12 @@ from Grid import Grid
 
 import pygame
 import numpy as np
+from numba import njit
+
+@njit(fastmath=True)
+def fastNorm(v):
+    return np.sqrt(v[0]*v[0] + v[1]*v[1])
+
 
 class Environment():
     def __init__(self) -> None:
@@ -39,6 +45,9 @@ class Environment():
         self.frame_count = 0
 
         self.hovering = False
+
+        self.adjusted_cells = []
+        self.directions = np.array([[1, 0], [0, 1], [-1, 0], [0, -1], [1, 1], [-1, -1], [-1, 1], [1, -1]])
     
     def attract(self, mass):
         atrraction_constant = 0.01
@@ -62,10 +71,11 @@ class Environment():
         
     def checkCollisionNew(self, mass):
         eps = 0.0001
-        directions = np.array([[1, 0], [0, 1], [-1, 0], [0, -1], [1, 1], [-1, -1], [-1, 1], [1, -1]])
-
-        for dir in directions:
+        
+        for dir in self.directions:
             adjacent_cell = self.grid.getCell(mass.pos + dir * self.cell_size)
+            #adjacent_cell.highlight = True
+            #self.adjusted_cells.append(adjacent_cell)
             if len(adjacent_cell.particles) > 0:
                 for p in adjacent_cell.particles:
                     if p != mass:
@@ -78,7 +88,7 @@ class Environment():
     def collisionResponse(self, mass1, mass2):
         response_constant = 0.5
 
-        dist = np.linalg.norm(mass1.pos - mass2.pos)
+        dist = fastNorm(mass1.pos - mass2.pos)
         dhat = (mass1.pos - mass2.pos) / dist
         minDist = mass1.radius + mass2.radius
 
@@ -127,11 +137,15 @@ class Environment():
         mouse_pos = pygame.mouse.get_pos()
         mouse_pos = np.array([mouse_pos[0], mouse_pos[1]])
 
-        #self.grid.draw()
+        self.grid.draw()
 
         self.frame_count += 1
 
         self.totalEnergy = 0
+
+        for a in self.adjusted_cells:
+            a.highlight = False
+        self.adjusted_cells = []
 
         for mass in self.massList:
             if mass.rect.collidepoint(mouse_pos):
@@ -140,11 +154,11 @@ class Environment():
 
             self.attract(mass)
 
-            for otherMass in self.massList:
+            '''for otherMass in self.massList:
                 if mass != otherMass:
-                    self.checkCollision(mass, otherMass)
-            
-            #self.checkCollisionNew(mass)
+                    self.checkCollision(mass, otherMass)'''
+            if len(self.massList) < 120:
+                self.checkCollisionNew(mass)
 
             mass.update()
 
@@ -163,7 +177,8 @@ class Environment():
             print ("energy display error")
 
         pygame.display.update()
-        pygame.display.set_caption("Particle Simulation: " + str(round(self.clock.get_fps())) + " FPS | " + str(len(self.massList)) + " Particles | hovering: " + str(self.hovering) )
+        pygame.display.set_caption("Particle Simulation: " + str(round(self.clock.get_fps())) + " FPS | " + str(len(self.massList)) +
+                                    " Particles | hovering: " + str(self.hovering) + "  |  run time: " + str(round(pygame.time.get_ticks()/1000)) + "s")
         
     def addMass(self, env, radius, mass, pos, color=(0, 0, 0)):
         self.massList.append(Mass(env, radius, mass, pos, color))
