@@ -53,7 +53,9 @@ class Environment():
     
     def attract(self, mass):
         atrraction_constant = 0.01
-        damping_constant = -3 * self.dt
+        damping_constant = 20
+
+        grav_force = self.g * mass.mass
 
         '''if (mass.pos[0] < self.WIDTH/2 + mass.radius and mass.pos[0] > self.WIDTH/2 - mass.radius and 
             mass.pos[1] < self.HEIGHT/2 + mass.radius and mass.pos[1] > self.HEIGHT/2 - mass.radius):
@@ -61,7 +63,13 @@ class Environment():
             mass.addVelocity(mass.getVelocity() * damping_constant)'''
 
         center_dist = np.array([self.WIDTH/2, self.HEIGHT/2]) - mass.pos
-        mass.addVelocity(center_dist * atrraction_constant)
+        
+        #mass.addVelocity(center_dist * atrraction_constant)
+
+        potential_energy = grav_force * center_dist
+        self.totalEnergy += np.linalg.norm(potential_energy)
+        mass.accelerate((potential_energy - (mass.getVelocity() * damping_constant)) *self.dt)
+
         
     def checkCollisionNew(self, mass):
         eps = 0.0001
