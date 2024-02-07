@@ -19,14 +19,13 @@ class Mass():
         self.prevPos = self.pos
 
     def update(self):
-        self.verletMethod()
+        self.eulerMethod()
         
-
         self.draw()
 
     def eulerMethod(self):
-        self.vel = self.vel + self.accel * dt
-        self.pos += self.vel * dt
+        self.vel = self.vel + self.accel * dt/self.env.computations_per_frame
+        self.pos = self.pos + self.vel * dt/self.env.computations_per_frame
 
     def verletMethod(self):
         self.vel = 2 * self.pos - self.prevPos

@@ -64,7 +64,13 @@ uy = (nN + nNE + nNW - nS - nSE - nSW) / rho				# macroscopic y velocity
 
 # Initialize barriers:
 barrier = numpy.zeros((height,width), bool)					# True wherever there's a barrier
-barrier[(height/2)-8:(height/2)+8, height/2] = True			# simple linear barrier
+#barrier[(height/2)-8:(height/2)+8, height/2] = True			# simple linear barrier
+
+for i in range(0, height):
+	for j in range(0, width):
+		if (i-height/2)**2 + (j-width/2)**2 < 25:
+			barrier[i,j] = True
+
 barrierN = numpy.roll(barrier,  1, axis=0)					# sites just north of barriers
 barrierS = numpy.roll(barrier, -1, axis=0)					# sites just south of barriers
 barrierE = numpy.roll(barrier,  1, axis=1)					# etc.
@@ -141,12 +147,12 @@ bImageArray[barrier,3] = 255								# set alpha=255 only at barrier sites
 barrierImage = matplotlib.pyplot.imshow(bImageArray, origin='lower', interpolation='none')
 
 # Function called for each successive animation frame:
-startTime = time.clock()
+startTime = time.process_time()
 #frameList = open('frameList.txt','w')		# file containing list of images (to make movie)
 def nextFrame(arg):							# (arg is the frame number, which we don't need)
 	global startTime
 	if performanceData and (arg%100 == 0) and (arg > 0):
-		endTime = time.clock()
+		endTime = time.process_time()
 		print ("%1.1f" % (100/(endTime-startTime)), 'frames per second')
 		startTime = endTime
 	#frameName = "frame%04d.png" % arg

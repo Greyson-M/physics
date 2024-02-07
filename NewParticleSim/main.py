@@ -17,7 +17,7 @@ def test(partnum):
             env.addMass(env, env.particle_size, 10, np.array([i*(3 * env.particle_size + 2) + OFFSET, j*(3 * env.particle_size + 2) + OFFSET]), ((i*10) % 255, (i*20) % 255, (i*30) % 255))
             print (env.massList[-1].pos)
 
-test(12)
+test(15)
 
 def main():
     run = True

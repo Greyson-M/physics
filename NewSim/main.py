@@ -1,4 +1,5 @@
 import math
+import numpy as np
 import pygame
 from breakButton import BreakButton
 from gravButton import GravButton
@@ -18,7 +19,6 @@ from gravSlider import GravSlider
 from stiffSlider import StiffSlider
 import random
 from constraint import Constraint
-
 
 
 
