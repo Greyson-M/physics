@@ -151,31 +151,31 @@ class Environment():
         self.adjusted_cells = []
         '''
 
-        def collision(mass):
-            for otherMass in self.massList:
-                if mass != otherMass:
-                    self.checkCollision(mass, otherMass)
+        # def collision(mass):
+        #     for otherMass in self.massList:
+        #         if mass != otherMass:
+        #             self.checkCollision(mass, otherMass)
 
-        with Pool() as p:
-            #p.map(self.attract, self.massList)
-            p.map(collision, self.massList)
+        # for m in self.massList:
+        #     collision(m)
 
-        
-
+        pos = []
 
         for mass in self.massList:
+            pos.append([mass.pos[0], mass.pos[1]])
+
             if mass.rect.collidepoint(mouse_pos):
                 self.hovering = True
             else: self.hovering = False
 
-            '''
+            
             self.attract(mass)
 
-            for otherMass in self.massList:
-                if mass != otherMass:
-                    self.checkCollision(mass, otherMass)'''
-            '''if len(self.massList) < 120:
-                self.checkCollisionNew(mass)'''
+            # for otherMass in self.massList:
+            #     if mass != otherMass:
+            #         self.checkCollision(mass, otherMass)
+            # '''if len(self.massList) < 120:
+            #     self.checkCollisionNew(mass)'''
 
             mass.update()
 

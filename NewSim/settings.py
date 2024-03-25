@@ -23,7 +23,7 @@ GAS_CONSTANT = 4
 
 
 #mass constant
-SPEED = 5
+SPEED = 10
 
 VOLUME = 0.5
 

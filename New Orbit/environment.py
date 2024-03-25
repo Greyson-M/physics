@@ -93,6 +93,44 @@ class Environment():
         b2.addForce(np.array([-Fx, -Fy]))
     '''
 
+    # def threeBody(self, b1, b2, b3):
+    #     G = 3
+
+    #     pos1 = b1.pos
+    #     pos2 = b2.pos
+    #     pos3 = b3.pos
+
+    #     m1 = b1.mass
+    #     m2 = b2.mass
+    #     m3 = b3.mass
+
+    #     r12 = np.linalg.norm(pos1 - pos2)
+    #     r13 = np.linalg.norm(pos1 - pos3)
+
+    #     r23 = np.linalg.norm(pos2 - pos3)
+    #     r21 = np.linalg.norm(pos2 - pos1)
+
+    #     r31 = np.linalg.norm(pos3 - pos1)
+    #     r32 = np.linalg.norm(pos3 - pos2)
+
+    #     thresh = 3.5
+
+    #     if (r12 > thresh and r13 > thresh):
+    #         accel1 = (-G * m2 * (pos1 - pos2) / pow(r12, 3)) - (G * m3 * (pos1 - pos3) / pow(r13, 3))
+    #     else: accel1 = np.array([0, 0])
+
+    #     if (r23 > thresh and r21 > thresh):
+    #         accel2 = (-G * m3 * (pos2 - pos3) / pow(r23, 3)) - (G * m1 * (pos2 - pos1) / pow(r21, 3))
+    #     else: accel2 = np.array([0, 0])
+
+    #     if (r31 > thresh and r32 > thresh):
+    #         accel3 = (-G * m1 * (pos3 - pos1) / pow(r31, 3)) - (G * m2 * (pos3 - pos2) / pow(r32, 3))
+    #     else: accel3 = np.array([0, 0])
+
+    #     b1.accel = accel1
+    #     b2.accel = accel2
+    #     b3.accel = accel3
+
     def threeBody(self, b1, b2, b3):
         G = 3
 
@@ -106,27 +144,16 @@ class Environment():
 
         r12 = np.linalg.norm(pos1 - pos2)
         r13 = np.linalg.norm(pos1 - pos3)
-
         r23 = np.linalg.norm(pos2 - pos3)
-        r21 = np.linalg.norm(pos2 - pos1)
 
-        r31 = np.linalg.norm(pos3 - pos1)
-        r32 = np.linalg.norm(pos3 - pos2)
+        accel1 = (-G * m2 * (pos1 - pos2) / pow(r12, 3)) - (G * m3 * (pos1 - pos3) / pow(r13, 3))
+        accel2 = (-G * m3 * (pos2 - pos3) / pow(r23, 3)) - (G * m1 * (pos2 - pos1) / pow(r12, 3))
+        accel3 = (-G * m1 * (pos3 - pos1) / pow(r13, 3)) - (G * m2 * (pos3 - pos2) / pow(r23, 3))
 
-        thresh = 3.5
+        b1.pos += b1.vel + 0.5 * accel1
+        b2.pos += b2.vel + 0.5 * accel2
+        b3.pos += b3.vel + 0.5 * accel3
 
-        if (r12 > thresh and r13 > thresh):
-            accel1 = (-G * m2 * (pos1 - pos1) / pow(r12, 3)) - (G * m3 * (pos1 - pos3) / pow(r13, 3))
-        else: accel1 = np.array([0, 0])
-
-        if (r23 > thresh and r21 > thresh):
-            accel2 = (-G * m3 * (pos2 - pos3) / pow(r23, 3)) - (G * m1 * (pos2 - pos1) / pow(r21, 3))
-        else: accel2 = np.array([0, 0])
-
-        if (r31 > thresh and r32 > thresh):
-            accel3 = (-G * m1 * (pos3 - pos1) / pow(r31, 3)) - (G * m2 * (pos3 - pos2) / pow(r32, 3))
-        else: accel3 = np.array([0, 0])
-
-        b1.accel = accel1
-        b2.accel = accel2
-        b3.accel = accel3
+        b1.vel += accel1
+        b2.vel += accel2
+        b3.vel += accel3

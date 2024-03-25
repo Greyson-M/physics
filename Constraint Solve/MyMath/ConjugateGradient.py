@@ -22,7 +22,7 @@ def conjugate_gradient(coeffs, b, x0):
     return x0
 
 if __name__ == '__main__':
-    coeffs = np.array([[4, 1], [1, 3]])
+    coeffs = np.array([[1, 1], [0, 1]])
     b = np.array([1, 2])
     x0 = np.array([0, 0])
     x = conjugate_gradient(coeffs, b, x0)
