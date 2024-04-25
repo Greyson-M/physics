@@ -2,7 +2,6 @@ import numpy as np
 from random import randint
 import pygame
 from settings import *
-from environment import Environment
 from Utils import *
 
 class Mass:
@@ -26,6 +25,13 @@ class Mass:
         self.name = name
         self.type = "Mass"
 
+    def update(self):
+        self.updatePos()
+        self.draw()
+
+    def draw(self):
+        pygame.draw.circle(self.environment.WIN, self.color, (int(self.pos[0]), int(self.pos[1])), self.mass)
+
     def gravForce(self):
         if not self.surface and not self.held:
             grav_force = np.array((0, self.environment.g * self.mass))
@@ -46,14 +52,7 @@ class Mass:
             return np.array((0, 0))
 
 
-    def updatePos(self, mousePos, t):
-        if self.held:
-            if (t*60)%10 < 1:
-                self.prevPos = self.pos
-
-        if self.held == True:
-            self.pos = mousePos
-            self.vel = (self.pos - self.prevPos) * 2
+    def updatePos(self):
 
         if not self.held:
             integration = "EULER"

@@ -1,6 +1,6 @@
 #GAME constants
 FPS = 120
-WIDTH, HEIGHT = 1280, 720
+WIDTH, HEIGHT = 1800, 900
 WHITE = (255, 255, 255)
 BLACK = (0, 0, 0)
 RED = (255, 0 , 0)

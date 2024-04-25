@@ -1,0 +1,9 @@
+﻿  dllmain.cpp
+D:\Documents\programming\physics\NewParticleSim\C library test\col check\dllmain.h(11,22): warning C4091: 'typedef ': ignored on left of 'Vector' when no variable is declared
+D:\Documents\programming\physics\NewParticleSim\C library test\col check\dllmain.cpp(16,11): warning C4273: 'distance': inconsistent dll linkage
+D:\Documents\programming\physics\NewParticleSim\C library test\col check\dllmain.h(15,16): message : see previous definition of 'distance'
+D:\Documents\programming\physics\NewParticleSim\C library test\col check\dllmain.cpp(22,9): warning C4273: 'add': inconsistent dll linkage
+D:\Documents\programming\physics\NewParticleSim\C library test\col check\dllmain.h(16,14): message : see previous definition of 'add'
+D:\Documents\programming\physics\NewParticleSim\C library test\col check\dllmain.cpp(27,9): warning C4273: 'check': inconsistent dll linkage
+D:\Documents\programming\physics\NewParticleSim\C library test\col check\dllmain.h(17,14): message : see previous definition of 'check'
+  col check.vcxproj -> D:\Documents\programming\physics\NewParticleSim\C library test\col check\x64\Debug\col check.dll

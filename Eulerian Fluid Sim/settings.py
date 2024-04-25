@@ -1,0 +1,6 @@
+# Set up some constants
+CELL_SIZE = 2
+WIDTH, HEIGHT = 400//CELL_SIZE, 400//CELL_SIZE
+
+FPS = 60
+DT = 1/FPS

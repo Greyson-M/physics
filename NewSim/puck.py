@@ -27,7 +27,7 @@ class Puck(Mass):
         if not self.held:
             self.kineticEnergy = 0.5 * self.mass * pow(pythag(self.vel), 2)
 
-        self.updatePos(mousePos, t)
+        self.updatePos()
         self.collision()
 
     def collision(self):

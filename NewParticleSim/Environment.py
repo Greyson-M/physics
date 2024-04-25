@@ -5,6 +5,8 @@ import pygame
 import numpy as np
 from numba import njit
 
+from multiprocessing import Pool
+
 @njit(fastmath=True)
 def fastNorm(v):
     return np.sqrt(v[0]*v[0] + v[1]*v[1])
@@ -137,28 +139,43 @@ class Environment():
         mouse_pos = pygame.mouse.get_pos()
         mouse_pos = np.array([mouse_pos[0], mouse_pos[1]])
 
-        self.grid.draw()
+        #self.grid.draw()
 
         self.frame_count += 1
 
         self.totalEnergy = 0
 
+        '''
         for a in self.adjusted_cells:
             a.highlight = False
         self.adjusted_cells = []
+        '''
+
+        # def collision(mass):
+        #     for otherMass in self.massList:
+        #         if mass != otherMass:
+        #             self.checkCollision(mass, otherMass)
+
+        # for m in self.massList:
+        #     collision(m)
+
+        pos = []
 
         for mass in self.massList:
+            pos.append([mass.pos[0], mass.pos[1]])
+
             if mass.rect.collidepoint(mouse_pos):
                 self.hovering = True
             else: self.hovering = False
 
+            
             self.attract(mass)
 
-            '''for otherMass in self.massList:
-                if mass != otherMass:
-                    self.checkCollision(mass, otherMass)'''
-            if len(self.massList) < 120:
-                self.checkCollisionNew(mass)
+            # for otherMass in self.massList:
+            #     if mass != otherMass:
+            #         self.checkCollision(mass, otherMass)
+            # '''if len(self.massList) < 120:
+            #     self.checkCollisionNew(mass)'''
 
             mass.update()
 

@@ -70,7 +70,7 @@ class Grid():
                 else:
                     self.color = self.env.BLACK
 
-                if len(self.particles) > 0 and len(self.env.massList) >= 120:
+                if len(self.particles) > 0:
                     self.checkCollision(self.particles)
 
                 self.particles = []
