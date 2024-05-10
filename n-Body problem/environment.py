@@ -4,6 +4,7 @@ import math
 from random import randint
 
 from Solver import Solver
+from camera import Camera
 
 WIDTH, HEIGHT = 800, 800
 FPS = 144
@@ -14,6 +15,7 @@ class Environment():
         self.freq = 20
 
         self.CENTER = np.array([WIDTH//2, HEIGHT//2])
+        self.WIDTH, self.HEIGHT = WIDTH, HEIGHT
         pygame.init()
         self.WIN = pygame.display.set_mode((WIDTH, HEIGHT))
         self.BG = ((17, 7, 30))
@@ -25,12 +27,15 @@ class Environment():
         self.font = pygame.font.SysFont(None, 18)
 
         # pos = [[-100, 0], [100, 0], [0, 0]]
+        # pos = [p + self.CENTER for p in pos]
         # v = ((0.347113,0.532727), (0.347113,0.532727), (-0.694226,-1.065454))
         # m = np.ones(3)*100
         # self.solver = Solver(self, np.array(pos), v, m)
 
-        #self.solver = self.gen_random_bodies(50, 150)
-        self.solver = self.gen_grid_bodies(25)
+        self.solver = self.gen_random_bodies(25, 150)
+        # self.solver = self.gen_grid_bodies(25)
+
+        self.Cam = Camera(self, self.solver)
 
     def dist(self, pos1, pos2):
         v = pos1 - pos2
@@ -44,7 +49,7 @@ class Environment():
         l = round(np.sqrt(n))
         pos = []
         v = []
-        m = np.ones(n)*10
+        m = np.ones(n)*1
 
         spaceing = 40
 
@@ -52,26 +57,22 @@ class Environment():
             for j in range(l):
                 pos.append((self.CENTER - np.array([l//2, l//2])) + np.array([i*spaceing, j*spaceing]))
                 v.append([0, 0])
+                # v.append([randint(-1, 1), randint(-1, 1)])
 
         return Solver(self, np.array(pos), v, m)
 
     
     def gen_random_bodies(self, n, radius):
-        pos = []
-        v = []
-        m = np.ones(n)*100
+        pos = np.array([])
+        v = np.zeros((n, 2))
+        m = np.ones(n)*1
 
-        while len(pos) < n:
-            x, y = randint(-WIDTH//2, WIDTH//2), randint(-HEIGHT//2, HEIGHT//2)
 
-            if self.dist_from_center(np.array([x, y])) < radius:
-                
-                for p in pos:
-                    if self.dist(np.array([x, y]), p) < 3:
-                        continue
-
-                pos.append(np.array([x, y]))
-                v.append([0, 0])
+        #gen random points within a circle
+        alpha = 2 * math.pi * np.random.rand(n)
+        r = radius * np.sqrt(np.random.rand(n))
+        pos = [self.CENTER 
+    + np.array([r[i] * math.cos(alpha[i]), r[i] * math.sin(alpha[i])]) for i in range(n)]
 
         return Solver(self, np.array(pos), v, m)
     
@@ -83,13 +84,19 @@ class Environment():
         self.WIN.fill(self.BG)
         self.clock.tick(FPS)
 
-        self.draw_spawn_circle(150)
+
+        #display fps in window title
+        pygame.display.set_caption("3-Body Problem Simulation | FPS: " + str(int(self.clock.get_fps())))
+
+        # self.draw_spawn_circle(150)
 
         for _ in range(self.freq):
             self.solver.solve_next()
+
+        self.Cam.update()
         
-        self.solver.draw()
-        self.solver.draw_center_of_mass()
+        # self.solver.draw()
+        # self.solver.draw_center_of_mass()
 
         # self.solver.draw_tracer()
 
