@@ -147,7 +147,7 @@ def main():
             vely = vely - (g/1)
 
         elif y >= floor:
-            vely =
+            vely =0
 
         x = x + (velx/1)
         y = y + (vely/1)

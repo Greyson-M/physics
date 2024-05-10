@@ -14,7 +14,7 @@ from generator import Generator
 from tube import Tube
 import numpy as np
 from pivot import Pivot
-from pytmx.util_pygame import load_pygame
+# from pytmx.util_pygame import load_pygame
 from gravSlider import GravSlider
 from stiffSlider import StiffSlider
 import random
@@ -266,14 +266,14 @@ def structure():
     topconst3 = environment.addConstraint(Constraint(top1, mid2, 150))
 
 
-cloth(10, 1, 0, 20)
+# cloth(10, 1, 0, 20)
 #loadMap(environment.map)
 #square()
 #triangle()
-#pendulum(1)
+# pendulum(1)
 #bridge(0)
 
-#structure()
+structure()
 
 #piv = environment.addPivot(Pivot(environment, np.array(( 350, 250))))
 #m1 = environment.addPuck(Puck(environment, 1, np.array(( 350, 75)), vel = np.array((5, 2)), radius=10, color=((255, 0, 0)), name='red'))
@@ -287,10 +287,10 @@ cloth(10, 1, 0, 20)
 #>>....
 
 #constraintTest()
-#spinnerTest()
-#cylinderTest()
-#newConstriantTest()
-#cannonTest()
+# spinnerTest()
+# cylinderTest()
+# newConstriantTest()
+# cannonTest()
 
 #loadMap(environment.map)
 

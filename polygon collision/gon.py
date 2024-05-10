@@ -6,7 +6,7 @@ class Gon:
         self.env = env
         #self.pos = pos
         self.vel = vel
-        self.g = 0
+        self.g = 9.8
         self.acc = np.array([0, self.g])
 
         self.angle = np.deg2rad(0)

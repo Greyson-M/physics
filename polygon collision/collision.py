@@ -215,6 +215,8 @@ class Collision:
         r1_list = []
         r2_list = []
 
+        
+
         for point in contact_points:
             r1 = point - center1
             r2 = point - center2

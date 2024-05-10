@@ -21,9 +21,9 @@ class Rocket():
         self.pid_pos = self.PID(self, (np.array((WIDTH/2, HEIGHT/2)) - np.array((0, 100))), 1.68, 0, 0)
 
         #current best: KP = 0.5, KD = 0.7, KI = 1 - "stable" in 3500 frames - 0.006 error
-        KP = 0.5 * 3
-        KD = 0.7 * 3
-        KI = 1 * 3
+        KP = 0.5 
+        KD = 0.7 
+        KI = 1 
 
         self.pid_ang = self.PID(self, np.radians(0), 0.5, 1, 1, False)
         self.controller = self.Controller(self.pid_pos, self.pid_ang)

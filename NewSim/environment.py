@@ -3,7 +3,7 @@ from spring import Spring
 from settings import *
 import pygame
 from Utils import *
-from pytmx.util_pygame import load_pygame
+# from pytmx.util_pygame import load_pygame
 from grid import Grid
 
 class Environment():

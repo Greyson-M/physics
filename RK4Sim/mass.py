@@ -46,7 +46,7 @@ class Mass():
 
             #self.eulerIntegration()
             self.verlet()
-            #self.RK4()
+            # self.RK4()
 
         self.draw()
 

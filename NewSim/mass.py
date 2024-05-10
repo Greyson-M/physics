@@ -55,7 +55,7 @@ class Mass:
     def updatePos(self):
 
         if not self.held:
-            integration = "EULER"
+            integration = "VERLET"
 
             if integration == "EULER":
                 #EULER INTEGRATION
@@ -69,7 +69,7 @@ class Mass:
                 #VERLET INTEGRATION
                 self.vel = 2 * self.pos - self.prevPos
                 self.prevPos = self.pos
-                self.pos = self.vel + self.accel * dt**2 * SPEED
+                self.pos = self.vel + self.accel * dt**2 * SPEED * 3
                 self.vel = self.pos - self.prevPos
                 self.accel = self.gravForce()/self.mass
             

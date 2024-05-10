@@ -75,6 +75,7 @@ class Environment:
 
         for gon in self.gons:
             for _ in range(self.freq):
+                self.Collision.collision_update(gon)
                 gon.update()
 
             gon.draw()
@@ -83,8 +84,8 @@ class Environment:
         #     for gon in self.gons:
         #         self.Collision.collision_update(gon)
 
-        for gon in self.gons:
-            self.Collision.collision_update(gon)
+        # for gon in self.gons:
+        #     self.Collision.collision_update(gon)
 
         pygame.display.update()
 
