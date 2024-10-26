@@ -225,10 +225,11 @@ def cylinderTest():
     gen = environment.addGenerator(Generator(environment, np.array((760, 517)), 35, 20))
     
     #piv = environment.addPivot(Pivot(environment, np.array(( 670, 517))))
-    p2 = environment.addPuck(Puck(environment, 10, np.array(( 670, 513)), radius=15, color=((75, 175, 200)), name='red'))
-    cylinder = environment.addCylinder(Cylinder(environment, pygame.Rect(570, 500, 115, 30), "right", p2))
+    p2 = environment.addPuck(Puck(environment, 10, np.array(( 670, 513)), np.array((0, 0)), radius=15, color=((75, 175, 200)), name='red'))
+    p2.applyImpulse(np.array((-80000, 0)))
+    cylinder = environment.addCylinder(Cylinder(environment, pygame.Rect(500, 500, 200, 30), "right", p2))
 
-    const = environment.addConstraint(Constraint(p2, gen.puck, 40))
+    const = environment.addConstraint(Constraint(p2, gen.puck, 30))
     #spring = environment.addSpring(p2, gen.puck, None, 0.5, name='1')
 
 def newConstriantTest():
@@ -273,7 +274,8 @@ def structure():
 # pendulum(1)
 #bridge(0)
 
-structure()
+# structure()
+
 
 #piv = environment.addPivot(Pivot(environment, np.array(( 350, 250))))
 #m1 = environment.addPuck(Puck(environment, 1, np.array(( 350, 75)), vel = np.array((5, 2)), radius=10, color=((255, 0, 0)), name='red'))
@@ -288,7 +290,7 @@ structure()
 
 #constraintTest()
 # spinnerTest()
-# cylinderTest()
+cylinderTest()
 # newConstriantTest()
 # cannonTest()
 

@@ -1,7 +1,7 @@
 import Utils
 
 #GAME constants
-FPS = 1200
+FPS = 12000
 WIDTH, HEIGHT = 1280, 720
 WHITE = (255, 255, 255)
 BLACK = (0, 0, 0)
