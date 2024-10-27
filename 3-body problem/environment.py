@@ -23,7 +23,7 @@ class Environment():
         self.sysfont = pygame.font.get_default_font()
         self.font = pygame.font.SysFont(None, 18)
 
-        self.solver = Solver(self, np.array([[-10, 0], [0, -10], [10, 0]]), 100, 100, 100)
+        self.solver = Solver(self, np.array([[-10, 0], [0, -10], [10, 0]]), 1000, 1000, 1000)
 
     def update(self):
         self.WIN.fill(self.BG)
